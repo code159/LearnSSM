@@ -38,33 +38,35 @@ public class StudentServiceTest {
 
     @Test
     public void testFindStudentById() {
-        Student student = studentService.findStudentById(1);
+    	Long id = 300L;
+        Student student = studentService.findStudentById(id.intValue());
         Assert.assertNotNull(student);
         System.out.println(student);
     }
 
     @Test
-    public void testCreateStudent() {
+    public void testCreateStudent() throws IOException {
         Student student = new Student();
-        Long id = 7L;
+        Long id = 300L;
         student.setStudId(id);
         student.setName("student_" + id);
         student.setEmail("student_" + id + "@gmail.com");
         student.setDob(new Date());
         studentService.createStudent(student);
+        studentService = new StudentService();
         Student newStudent = studentService.findStudentById(id.intValue());
         Assert.assertNotNull(newStudent);
     }
     
     @Test
     public void testDeleteStudentById() {
-    	Long id = 7L;
+    	Long id = 300L;
         studentService.deleteStudentById(id.intValue());
     }
     
     @Test
     public void testUpdateStudentById() {
-    	Long id = 1L;
+    	Long id = 300L;
     	Student student=new Student();
     	student.setStudId(id);
     	student.setName("liyubin");

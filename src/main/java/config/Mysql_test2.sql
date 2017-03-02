@@ -1,1 +1,2 @@
-select * from article
+select * from article;
+select * from students;

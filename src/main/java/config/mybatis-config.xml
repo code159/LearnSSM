@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <!-- mybatis 用来建立 sessionFactory 用的，里面主要包含了数据库连接相关东西，还有 java 类所对应的别名 -->
 <configuration>
-    <properties resource="config/config.properties"><!--定义配置信息，在本配置中可以使用${key}来引用-->
+    <properties resource="config/jdbc.properties"><!--定义配置信息，在本配置中可以使用${key}来引用-->
        <!--同名的key，config.properties覆盖property子元素的属性值-->
         <property name="name1" value="value.in.property.element"/>
     </properties>
@@ -15,11 +15,11 @@
         <!--包名下的Model类，使用类名作为别名，不区分大小写-->
         <package name="org.lyb.model"/>
     </typeAliases>
-    <environments default="development"><!--默认的环境信息，在生产环境中需要修改production-->
-        <environment id="development"><!--开发环境的配置-->
-            <!--事务管理，MyBatis提供了两种方式，JDBC的连接事务管理以及Managed-->
+    <!-- 与spring 集成之后,这些可以完全删除,数据库连接的管理交给 spring 去管理 -->
+     
+    <environments default="development">
+        <environment id="development">
             <transactionManager type="JDBC"/>
-            <!--数据源配置-->
             <dataSource type="POOLED">
                 <property name="driver" value="${driver}"/>
                 <property name="url" value="${url}"/>
@@ -27,7 +27,7 @@
                 <property name="password" value="${password}"/>
             </dataSource>
         </environment>
-        <environment id="production"><!--生产环境的配置-->
+        <environment id="production">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="${driver}"/>
@@ -37,6 +37,7 @@
             </dataSource>
         </environment>
     </environments>
+    
     <mappers>
         <!--SQL映射文件，可以多个-->
         <mapper resource="config/Students-Mapper.xml"/>
