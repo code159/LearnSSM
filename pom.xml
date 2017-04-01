@@ -28,12 +28,32 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> -->
+		
+		<!-- javax.servlet -->
+		<dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+		
 		<!-- spring核心包 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -80,6 +100,7 @@
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		
 		<!-- mybatis核心包 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -92,6 +113,7 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.2.2</version>
 		</dependency>
+		
 		<!-- 导入java ee jar 包 -->
 		<dependency>
 			<groupId>javax</groupId>
@@ -111,11 +133,11 @@
 			<version>1.2.2</version>
 		</dependency>
 		<!-- JSTL标签类 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
-		</dependency>
+		</dependency> -->
 		<!-- 日志文件管理包 -->
 		<!-- log start -->
 		<dependency>
