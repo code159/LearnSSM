@@ -15,7 +15,7 @@ public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherS
 		return new Class<?>[]{RootConfig.class};
 	}
 
-	//指定Web相关配置类。WebConfig是一个配置类，在里面可自定义bean
+	//指定配置类。WebConfig是一个配置类，在里面可自定义bean
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
 		return new Class<?>[]{WebConfig.class};
